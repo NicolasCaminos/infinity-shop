@@ -2,7 +2,7 @@
   "name": "infinity-shop",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://nicolascaminos.github.io/infinity-shop/",
+  "homepage": " /",
   "type": "module",
   "scripts": {
     "predeploy":"npm run build",
