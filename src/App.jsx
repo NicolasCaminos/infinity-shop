@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer parrafo="Bienbenido"></ItemListContainer>
+      <ItemListContainer></ItemListContainer>
     </>
   );
 }
