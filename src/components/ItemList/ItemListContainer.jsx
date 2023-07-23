@@ -1,9 +1,9 @@
 // eslint-disable-next-line react/prop-types
-const ItemListContainer = () => {
+const ItemListContainer = ({parrafo}) => {
   return (
     <main className="base-content">
       <div className="container">
-        <p>Bienvenido</p>
+        <h2>{parrafo}</h2>
       </div>
     </main>
   );
