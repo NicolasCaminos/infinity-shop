@@ -3,7 +3,7 @@ const ItemListContainer = ({parrafo}) => {
   return (
     <main className="base-content">
       <div className="container">
-        <h2>{parrafo}</h2>
+        <h1>{parrafo}</h1>
       </div>
     </main>
   );
