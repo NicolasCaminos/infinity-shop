@@ -1,3 +1,4 @@
+import CartWidget from "../Cart/CartWidget";
 // eslint-disable-next-line react/prop-types
 const Navbar = () => {
   return (
@@ -34,6 +35,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
+            <CartWidget />
           </div>
         </div>
       </nav>

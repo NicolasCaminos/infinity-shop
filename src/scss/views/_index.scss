@@ -7,3 +7,27 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.ocultar {
+    position: relative;
+    right: 30px !important;
+    height: 30px;
+    width: 30px;
+}
+
+.oculto {
+    display: none;
+}
+.carro{
+    background-color: rgb(22, 20, 20);
+}
+.contador {
+    display: block;
+    background-color: red;;
+    border-radius: 150px;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: -10px 0 0 30px;
+}
