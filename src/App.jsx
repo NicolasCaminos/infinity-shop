@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer parrafo='Bienvenidos'/>
+      <ItemListContainer greeting="Bienvenidos a Infinity" />
     </>
   );
 }

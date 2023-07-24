@@ -22,6 +22,16 @@ Ramas de trabajo: El mismo cuenta con dos ramas de trabajo: Master (donde se alo
 ### Entrega 0.1
 
 <br>
+Objetivos: Crear un componente CartWidget con un ícono y una notificación mostrando un número hardcodeado (fijo). Este servirá luego para indicar la cantidad de elementos que tenemos en el carrito, pero por ahora, mostrará un número hardcodeado (colocado en el código). 
+Ubicar este componente (CartWidget) dentro de Navbar..
+<br>
+Agregar algunos estilos con bootstrap/materialize u otro.
+<br>
+Crear un componente contenedor ItemListContainer.js con una prop greeting, y muestra el mensaje dentro del contenedor con el styling integrado.
+
+<li>Brand (título/nombre de la tienda).</li>
+<li>Un listado de categorías clickeables.</li>
+<li>Incorpora alguna librería de estilos con bootstrap/materialize u otro de tu preferencia (opcional).</li>
 
 <!-- ### Entrega 0.2
 
