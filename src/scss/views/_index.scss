@@ -18,16 +18,43 @@
 .oculto {
     display: none;
 }
-.carro{
+
+.carro {
     background-color: rgb(22, 20, 20);
 }
+
 .contador {
     display: block;
-    background-color: red;;
+    background-color: red;
+    ;
     border-radius: 150px;
     padding: 5px;
     width: 30px;
     text-align: center;
     font-size: 14px;
     margin: -10px 0 0 30px;
+}
+
+.card {
+    position: relative;
+    display: inline-flex;
+    gap: 50px;
+}
+
+:is(.removeProduct.addProduct) {
+    height: 20px;
+    display: inline;
+    position: relative;
+    width: 20px;
+    gap: 5px;
+}
+
+.addChart {
+    position: relative;
+    top: 10px;
+}
+
+span {
+    position: relative;
+    width: 30px;
 }

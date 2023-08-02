@@ -1,14 +1,15 @@
 import "./css/App.css";
-import ItemListContainer from "./components/ItemList/ItemListContainer.jsx";
-import Navbar from "./components/Navbar/NavBar.jsx";
+import ItemListContainer from "./components/ItemList/ItemListContainer";
+import Navbar from "./components/Navbar/NavBar";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <ItemListContainer parrafo='Bienvenidos'/>
-    </>
-  );
+    return (
+        <>
+            <Navbar/>
+            <ItemListContainer parrafo="a Infinity" />
+
+        </>
+    );
 }
 
 export default App;
