@@ -6,7 +6,7 @@ function App() {
     return (
         <>
             <Navbar/>
-            <ItemListContainer parrafo="a Infinity" />
+            <ItemListContainer />
 
         </>
     );

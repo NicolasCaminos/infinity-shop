@@ -36,9 +36,10 @@
 }
 
 .card {
-    position: relative;
-    display: inline-flex;
+    position: relative ;
+    display: inline-block;
     gap: 50px;
+ 
 }
 
 :is(.removeProduct.addProduct) {
