@@ -1,45 +1,30 @@
-import ItemCount from '../ItemDetail/ItemCount'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
-function Item({ id, descripcion, precio, foto, estado }) {
+export const Item = ({ img, img2, nombre, precio, id }) => {
+
+    const [imgHover, setImgHover] = useState(img)
+    const cambiarImg = () => {
+        setImgHover(img2)
+    }
+    const volverImg = () => {
+        setImgHover(img)
+    }
 
     return (
-
-
-        <Card raised
-            sx={{
-                maxWidth: 280,
-                margin: "0 auto",
-                padding: "0.1em",
-            }}
-            className="card">
-            <CardContent>
-                <CardMedia
-                    objectFit
-                    component="img"
-                    height="250"
-                    src={`https://http2.mlstatic.com/D_604790-${foto}-V.webp`}
-                    title={descripcion}
-                />
-                <Typography gutterBottom variant="h6" component="div">
-                    {descripcion}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                </Typography>
-                <Typography variant="p" color="text.secondary">
-                    $ {precio}
-                </Typography>
-                <ItemCount stock={5} initial={1} />
-            </CardContent>
-
-        </Card>
-
-    );
+        <div className="card">
+            <div className="card__imgContainer">
+                <img onMouseEnter={cambiarImg} onMouseLeave={volverImg} src={imgHover} alt="" className="card__img" />
+            </div>
+            <div className="card__description">
+                <div className="card__nameProduct">{nombre}</div>
+                <div className="card__priceProduct">${precio}</div>
+                <div className="card__financing">6 cuotas sin interés de ${(precio / 6).toFixed(2)}</div>
+            </div>
+            <div className="card__actions">
+                <button className="agregarButton">Agregar</button>
+                <Link to={`/item/${id}`}><button className="verButton">Ver</button></Link>
+            </div>
+        </div>
+    )
 }
-
-export default Item;

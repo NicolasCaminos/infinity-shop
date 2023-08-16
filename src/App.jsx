@@ -1,15 +1,13 @@
-import "./css/App.css";
-import ItemListContainer from "./components/ItemList/ItemListContainer";
-import Navbar from "./components/Navbar/NavBar";
+import { NavBar } from './components/NavBar'
+import { ItemListContainer } from './components/ItemListContainer'
 
-function App() {
-    return (
-        <>
-            <Navbar/>
-            <ItemListContainer />
-
-        </>
-    );
+function App() { 
+  return (
+    <>
+      <NavBar />
+      <ItemListContainer />
+    </>
+  )
 }
 
-export default App;
+export default App

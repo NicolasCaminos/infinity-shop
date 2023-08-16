@@ -9,20 +9,20 @@ export const ItemListContainer = ({ category = '' }) => {
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         setLoading(true)
-        if (category) {
-            getData()
-                .then(data => {
-                    const filteredData = data.filter(item => item.category === category)
-                    setProducts(filteredData)
-                })
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        } else {
-            getData()
-                .then(data => setProducts(data))
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        }
+            if (category) {
+                getData()
+                    .then(data => {
+                        const filteredData = data.filter(item => item.category === category)
+                        setProducts(filteredData)
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => setLoading(false))
+            } else {
+                getData()
+                    .then(data => setProducts(data))
+                    .catch(error => console.log(error))
+                    .finally(() => setLoading(false))
+            }
     }, [category])
     return (
         <main className='main'>

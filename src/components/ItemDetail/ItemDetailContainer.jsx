@@ -1,38 +1,45 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import Loader from "./Loader";
+import NewsDetail from "./NewsDetail";
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ newsId }) {
     const [isLoading, setIsLoading] = useState(true);
-    const [item, setItem] = useState({});
+    const [notice, setNotice] = useState({});
 
     useEffect(() => {
-        fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648")
+        fetch(`https://fakestoreapi.com/products/items/${newsId}`)
             .then((response) => {
-                return response.json();
+                if (response.ok) return response.json();
+                throw new Error("No se encontro una noticia con ese ID");
             })
-            .then((data) => {
-                console.log(data);
-                setItem({
-                    id: data.results[1].id,
-                    descripcion: data.results[1].title,
-                    precio: data.results[1].price,
-                    foto: data.results[1].thumbnail_id,
-                    estado: data.results[1].condition,
-                });
-                setIsLoading(false);
-            });
+            .then((result) => {
+                console.log(result);
+                const createdAt = new Date(result.created_at);
+                setNotice({ ...result, createdAt: createdAt.toISOString() });
+            })
+            .catch((error) => console.error(error))
+            .finally(() => setIsLoading(false));
     }, []);
 
+    if (isLoading) return <Loader />;
+
     return (
-        <>
-            {isLoading ? (
-                <h4>Cargando...</h4>
-            ) : (
-                
-                    <ItemDetail descripcion={item.descripcion} precio={item.precio} foto={item.foto} />
-     
-            )}
-        </>
+        <main
+            style={{
+                padding: "1rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "2rem",
+            }}
+        >
+            <NewsDetail
+                title={notice.title}
+                author={notice.author}
+                createdAt={notice.createdAt}
+            />
+        </main>
     );
 }
 

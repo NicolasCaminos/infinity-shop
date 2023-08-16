@@ -1,36 +1,14 @@
-import { height } from "@mui/system";
-import Item from "./Item";
+import { Item } from './Item';
 
-function ItemList({ itemList = [] }) {
+import Row from 'react-bootstrap/Row'
+
+export const ItemList = ({ products }) => {
     return (
-        <section
-            style={{
-                display: "inline-flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "2rem",
-                flexWrap: "wrap",
-                maxHeight: "700px"
-            }}
-        >
-            {
-                itemList.map((item) => {
+        <Row xs={1} sm={2} lg={3} xl={4} xxl={5} className="g-4">
+            {products.map(item => (
+                <Item key={item.id} id={item.id} description={item.description} price={item.price} name={item.name} />
+            ))}
+        </Row>
 
-                    return (
-                        <Item
-                            key={item.id}
-                            descripcion={item.title}
-                            precio={item.price}
-                            foto={item.thumbnail_id}
-                            estado={item.condition}
-
-                        />
-                    );
-                })
-            }
-        </section >
     );
 }
-
-export default ItemList;
