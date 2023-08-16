@@ -4,8 +4,8 @@ import { ItemListContainer } from './components/ItemListContainer'
 function App() { 
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
+      <Navbar />
+      <ItemListContainer parrafo='Bienvenidos'/>
     </>
   )
 }
