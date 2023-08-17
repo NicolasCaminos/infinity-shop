@@ -11,7 +11,7 @@ function Products() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648&results")
             .then((res) => res.json())
             .then((json) => {
                 console.log(json);

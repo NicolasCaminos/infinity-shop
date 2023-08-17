@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
-import Loader from "./Loader";
-import NewsDetail from "./NewsDetail";
+import Loader from "../Loader/Loader";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-function ItemDetailContainer({ newsId }) {
+function ItemDetailContainer({ itemId }) {
     const [isLoading, setIsLoading] = useState(true);
-    const [notice, setNotice] = useState({});
+    const [item, setItems] = useState({});
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/items/${newsId}`)
+        fetch(`https://api.mercadolibre.com/items/${itemId}`)
             .then((response) => {
                 if (response.ok) return response.json();
                 throw new Error("No se encontro una noticia con ese ID");
             })
             .then((result) => {
                 console.log(result);
-                const createdAt = new Date(result.created_at);
-                setNotice({ ...result, createdAt: createdAt.toISOString() });
+                setItems({ result });
             })
             .catch((error) => console.error(error))
             .finally(() => setIsLoading(false));
@@ -34,10 +33,10 @@ function ItemDetailContainer({ newsId }) {
                 gap: "2rem",
             }}
         >
-            <NewsDetail
-                title={notice.title}
-                author={notice.author}
-                createdAt={notice.createdAt}
+            <ItemDetail
+                key={item.id}
+                descripcion={item.title}
+                precio={item.price}
             />
         </main>
     );

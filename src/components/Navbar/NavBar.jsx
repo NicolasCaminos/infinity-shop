@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DorianLogo from '../../assets/DS.svg'
 import Container from 'react-bootstrap/Container';
-import { CartWidget } from '../CartWidget';
 import { Link } from 'react-router-dom';
 
 
@@ -14,7 +13,7 @@ export const NavBar = () => {
     return (
         <Navbar sticky="top" expand="sm" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
             <Container>
-                <Link to="/"><img src={DorianLogo} height={40} /></Link>
+                <Link to="/"><img src={'../../assets/img/4.png'} height={40} /></Link>
                 <Row>
                     <Col>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,7 +26,7 @@ export const NavBar = () => {
                         </Navbar.Collapse>
                     </Col>
                     <Col>
-                        <CartWidget />
+
                     </Col>
                 </Row>
             </Container>

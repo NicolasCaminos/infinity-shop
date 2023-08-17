@@ -1,36 +1,39 @@
-import { Profiler, useEffect, useState } from 'react';
-import { SkeletonItem } from '../SkeletonItem';
-import './ItemListContainer.css'
-import { ItemList } from '../ItemList';
-import { getData } from '../../data';
+import { useEffect, useState } from "react";
+import Item from './Item';
+import ItemList from './ItemList';
+import Loader from '../Loader/Loader';
 
-export const ItemListContainer = ({ category = '' }) => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+
+// eslint-disable-next-line react/prop-types
+function ItemListContainer() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [item, setItem] = useState({});
+
     useEffect(() => {
-        setLoading(true)
-        if (category) {
-            getData()
-                .then(data => {
-                    const filteredData = data.filter(item => item.category === category)
-                    setProducts(filteredData)
-                })
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        } else {
-            getData()
-                .then(data => setProducts(data))
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        }
-    }, [category])
-    return (
-        <main className='main'>
-            <h1 className='title' style={{ display: 'inline-block' }}>Catálogo de Productos</h1><span>{category}</span>
-            {loading
-                ? <SkeletonItem cards={40} />
-                : <ItemList products={products} />}
+        fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648")
+            .then((response) => {
+                if (response.ok) return response.json();
+                throw new Error("No se encontraron noticias");
+            })
+            .then((result) => {
+                console.log(result);
+                setItem(result.results);
+            })
+            .catch((error) => console.error(error))
+            .finally(() => setIsLoading(false));
+    }, []);
 
+    if (isLoading) return <Loader />;
+
+
+    return (
+        <main className='base-content'
+            style={{
+                padding: "1rem",
+            }}
+        >
+            <ItemList itemList={item} />
         </main>
     );
 }
+export default ItemListContainer;

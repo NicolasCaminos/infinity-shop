@@ -1,14 +1,30 @@
-import { Item } from './Item';
+import { height } from "@mui/system";
+import Item from "./Item";
+import { Link } from 'react-router-dom'
 
-import Row from 'react-bootstrap/Row'
-
-export const ItemList = ({ products }) => {
+function ItemList({ itemList = [] }) {
     return (
-        <Row xs={1} sm={2} lg={3} xl={4} xxl={5} className="g-4">
-            {products.map(item => (
-                <Item key={item.id} id={item.id} description={item.description} price={item.price} name={item.name} />
-            ))}
-        </Row>
+        <div
+        >
+            {
+                itemList.map((item) => {
 
+                    return (
+                        <Link to={`/Item/${item.id}`} >
+                            <Item
+                                key={item.id}
+                                descripcion={item.title}
+                                precio={item.price}
+                                foto={item.thumbnail_id}
+                                estado={item.condition}
+
+                            />
+                        </Link>
+                    );
+                })
+            }
+        </div >
     );
 }
+
+export default ItemList;
