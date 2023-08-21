@@ -1,20 +1,33 @@
-import { useEffect, useState } from "react";
-import Loader from "../Loader/Loader";
-import ItemDetail from "../ItemDetail/ItemDetail";
 
-function ItemDetailContainer({ itemId }) {
+import Loader from "../Loader/Loader";
+import ItemDetail from "./ItemDetail";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+
+
+function ItemDetailContainer() {
     const [isLoading, setIsLoading] = useState(true);
-    const [item, setItems] = useState({});
+    const [items, setItems] = useState({});
+    const parames = useParams();
 
     useEffect(() => {
-        fetch(`https://api.mercadolibre.com/items/${itemId}`)
+        console.log(parames)
+
+        fetch(`https://api.mercadolibre.com/items/${parames.id}`)
             .then((response) => {
                 if (response.ok) return response.json();
-                throw new Error("No se encontro una noticia con ese ID");
+
             })
             .then((result) => {
                 console.log(result);
-                setItems({ result });
+
+                setItems({
+                    title: result.title,
+                    price: result.price,
+                    thumbnail_id: result.thumbnail,
+                    descripcion: result.descripcion
+                });// Check the response content here
             })
             .catch((error) => console.error(error))
             .finally(() => setIsLoading(false));
@@ -34,12 +47,14 @@ function ItemDetailContainer({ itemId }) {
             }}
         >
             <ItemDetail
-                key={item.id}
-                descripcion={item.title}
-                precio={item.price}
+                key={items.id}
+                title={items.title}
+                precio={items.price}
+                foto={items.thumbnail_id}
             />
         </main>
     );
 }
 
 export default ItemDetailContainer;
+

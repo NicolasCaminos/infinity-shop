@@ -1,7 +1,7 @@
 // Dependencies
 import { Link } from "react-router-dom";
 
-const Item = ({ id, nombre, precio, foto, descripcio }) => {
+const Detail = ({ id, nombre, precio, foto, descripcio }) => {
     return (
         <div className="col-md-4">
             <div className="card">
@@ -20,4 +20,4 @@ const Item = ({ id, nombre, precio, foto, descripcio }) => {
     );
 };
 
-export default Item;
+export default Detail;
