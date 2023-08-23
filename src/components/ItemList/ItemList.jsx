@@ -24,10 +24,12 @@ const ItemList = ({ list }) => {
                 {list.map((item) => (
                     <Link key={item.id} to={`/item/${item.id}`} >
                         <Item
-                            descripcion={item.title}
+                            id={item.id}
+                            nombre={item.title}
                             precio={item.price}
                             foto={item.thumbnail_id}
-                            item={item}
+                    
+            
                         />
                     </Link>
                 ))}

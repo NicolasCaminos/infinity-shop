@@ -1,11 +1,11 @@
 import ItemListContainer from './components/ItemList/ItemListContainer'
-import { NavBar } from './components/Navbar/NavBar'
+import Navbar from './components/Navbar/NavBar'
 
 function App() {
     return (
         <>
-            <NavBar />
-            <ItemListContainer />
+            <Navbar />
+            <ItemListContainer defaultCategory={"MLA1652"} />
         </>
     )
 }

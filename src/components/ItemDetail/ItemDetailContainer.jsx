@@ -23,7 +23,9 @@ function ItemDetailContainer() {
                 console.log(result);
 
                 setItems({
+                    id: result.id,
                     title: result.title,
+
                     price: result.price,
                     thumbnail_id: result.thumbnail,
                     descripcion: result.descripcion
@@ -48,7 +50,7 @@ function ItemDetailContainer() {
         >
             <ItemDetail
                 key={items.id}
-                title={items.title}
+                nombre={items.title}
                 precio={items.price}
                 foto={items.thumbnail_id}
             />

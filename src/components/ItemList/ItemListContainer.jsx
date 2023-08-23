@@ -1,41 +1,48 @@
+
 // Dependencies
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
 // Components
 import ItemList from "./ItemList";
-// Context
-
-const ItemListContainer = ({ loader }) => {
-    const { categoryId } = useParams();
-    const [list, setList] = useState([]);
+import Loader from "../Loader/Loader";
 
 
-    // Listado de productos Mercado Libre
-    const getItemsML = async () => {
-        const category = categoryId ? categoryId : "MLA1055";
-        const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}&limit=9&offset=0`);
-        const result = await response.json();
-        setList(result.results);
+const ItemListContainer = ({ defaultCategory }) => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [list, setItems] = useState({});
+    const categoryId = useParams();
 
-    };
-
-
-
-    // Llama a la función cuando se recibe la variable categoryId
     useEffect(() => {
-        getItemsML();
+        const category = defaultCategory;
+        console.log(category)
+        fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}&limit=9&offset=0`)
+            .then((response) => {
+                if (response.ok) return response.json();
+            })
+            .then((result) => {
+                console.log(result.results)
+                setItems(result.results);
+            })
+            .catch((error) => console.error(error))
+            .finally(() => setIsLoading(false));
     }, [categoryId]);
 
-    //
+    if (isLoading) return <Loader />;
 
     return (
-        <main className="album">
-            <div className="container-xxl pt-4 pb-3">
-                <ItemList list={list} />
-            </div>
+        <main
+            style={{
+                padding: "1rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "2rem",
+            }}
+        >
+            {list && <ItemList list={list} />}
         </main>
     );
-};
+}
 
 export default ItemListContainer;

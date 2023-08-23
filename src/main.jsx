@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Categoria from './routes/Categoria.jsx'
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer.jsx'
-
+import Navbar from './components/Navbar/NavBar'
+import ItemListContainer from './components/ItemList/ItemListContainer.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,10 +15,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
             <Routes>
                 <Route exact path='/' element={<App />} />
-                <Route exact path='/Category/:id' element={<Categoria />} />
-                <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+                <Route exact path='/category/:id' element={<><Navbar /><Categoria /></>} />
+                <Route exact path='/item/:id' element={<><Navbar /><ItemDetailContainer /></>} />
             </Routes>
         </BrowserRouter>
 
-    </React.StrictMode>,
+    </React.StrictMode >,
 )
