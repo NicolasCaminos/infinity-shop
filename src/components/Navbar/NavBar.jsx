@@ -19,9 +19,9 @@ function NavBar() {
 
                 <Nav className="me-auto">
 
-                    <Link to="/category/MLA1071">Notebook</Link>
-                    <Link to="/category/MLA1403">Software</Link>
-                    <Link to="/category/MLA1512">Tablets y Accesorios</Link>
+                    <Link className="nav-link" to="/category/MLA1071">Notebook</Link>
+                    <Link className="nav-link" to="/category/MLA1403">Software</Link>
+                    <Link className="nav-link"  to="/category/MLA1512">Tablets y Accesorios</Link>
 
                 </Nav>
 
