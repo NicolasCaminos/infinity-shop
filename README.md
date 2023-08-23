@@ -1,8 +1,8 @@
-# Infinity
+# React + Vite
 
----
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Table of Contents
+Currently, two official plugins are available:
 
 1. [General Info](#general-info)
 2. [Technologies](#technologies)

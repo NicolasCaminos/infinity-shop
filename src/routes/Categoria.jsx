@@ -3,8 +3,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 // Components
-import ItemList from "./ItemList";
-import Loader from "../Loader/Loader";
+import ItemList from "../components/ItemList/ItemList"
+import Loader from "../components//Loader/Loader";
 
 
 const ItemListContainer = ({ defaultCategory }) => {
@@ -13,9 +13,9 @@ const ItemListContainer = ({ defaultCategory }) => {
     const categoryId = useParams();
 
     useEffect(() => {
-        const category = defaultCategory;
-        console.log(category)
-        fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}&limit=9&offset=0`)
+
+        console.log(categoryId)
+        fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${categoryId.id}&limit=9&offset=0`)
             .then((response) => {
                 if (response.ok) return response.json();
             })
@@ -44,6 +44,5 @@ const ItemListContainer = ({ defaultCategory }) => {
         </main>
     );
 }
-
 
 export default ItemListContainer;

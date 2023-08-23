@@ -1,46 +1,35 @@
-import CartWidget from "../Cart/CartWidget";
-// eslint-disable-next-line react/prop-types
-const Navbar = () => {
-  return (
-    <header className="base-header">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand logo_Infinity" href="#"></a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Notebooks
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Discos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Placas
-                </a>
-              </li>
-            </ul>
-            <CartWidget />
-          </div>
-        </div>
-      </nav>
-    </header>
-  );
-};
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import LogoInfinity from '../../assets/img/4.png'
+import CartWidget from '../Cart/CartWidget';
+import Row from 'react-bootstrap/Row';
+import Item from '../ItemList/Item';
+import { Link } from 'react-router-dom';
 
-export default Navbar;
+
+function NavBar() {
+
+    return (
+        <Navbar bg="light" data-bs-theme="light">
+            <Container>
+                <Link to="/" >
+                    <Navbar.Brand><img className="logo_Infinity" src={`${LogoInfinity}`}></img></Navbar.Brand>
+                </Link>
+
+                <Nav className="me-auto">
+
+                    <Link to="/category/MLA1071">Notebook</Link>
+                    <Link to="/category/MLA1403">Software</Link>
+                    <Link to="/category/MLA1512">Tablets y Accesorios</Link>
+
+                </Nav>
+
+            </Container>
+            < CartWidget />
+        </Navbar >
+    )
+
+}
+
+export default NavBar;
