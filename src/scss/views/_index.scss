@@ -1,4 +1,5 @@
 .logo_Infinity {
+    background-image: url("/src/assets/img/4.png");
     height: 80px !important;
     width: 80px !important;
     position: relative;
@@ -18,13 +19,29 @@
     display: none;
 }
 
+.contador {
+    display: block;
+    background-color: red;
+    border-radius: 150px;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: -10px 0 0 30px;
+}
+
+.mostrar {
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
 .me-auto {
     gap: 20px;
 
 }
 
 .nav-link {
-    text-decoration: none ;
+    text-decoration: none;
 }
 
 .contador {
@@ -39,22 +56,6 @@
     margin: -10px 0 0 30px;
 }
 
-.card {
-    position: relative;
-    display: inline-block;
-    gap: 50px;
-    width: 50vh;
-
-}
-
-:is(.removeProduct.addProduct) {
-    height: 20px;
-    display: inline;
-    position: relative;
-    width: 20px;
-    gap: 5px;
-}
-
 .addChart {
     position: relative;
     top: 10px;
@@ -63,4 +64,116 @@
 span {
     position: relative;
     width: 30px;
+}
+
+/*INDEX*/
+body {
+
+
+
+    & main {
+        & .row {
+            margin-top: 10vh;
+        }
+
+        li:hover {
+            background-color: #334155 !important;
+            border-radius: 30px;
+
+            a:hover {
+                background-color: #334155;
+                color: aliceblue;
+                transition: 100ms;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+        }
+
+        .cardIndex {
+            left: 10px;
+            text-align: justify;
+            height: 350px;
+            width: 600px;
+
+            a {
+                text-decoration: none !important;
+            }
+
+            p {
+                display: none;
+
+            }
+
+            img {
+                height: 180px;
+                width: 180px;
+            }
+
+            a {
+                color: #334155;
+            }
+
+            button {
+                display: none;
+            }
+        }
+
+        .cardIndex:hover {
+            box-shadow: 0px 0px 5px 1px grey;
+            transition-property: height;
+            transition-duration: 1500ms;
+            height: 450px;
+
+            button,
+            p {
+                display: block;
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 770px) {
+    body {
+        & main {
+            & .row {
+                margin-top: 10vh;
+            }
+
+            .cardIndex {
+                text-align: justify;
+                height: 300px;
+
+                img {
+                    height: 180px;
+                    width: 180px;
+                }
+            }
+
+        }
+
+    }
+}
+
+/* */
+@media screen and (min-width: 768px) and (max-width: 975px) {
+    body {
+        & main {
+            & .row {
+                margin-top: 10vh;
+            }
+
+            .cardIndex {
+                text-align: justify;
+
+                img {
+                    height: 180px;
+                    width: 180px;
+                }
+            }
+        }
+
+    }
+
 }

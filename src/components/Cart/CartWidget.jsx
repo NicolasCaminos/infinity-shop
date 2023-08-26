@@ -1,22 +1,34 @@
-const CartWidget = ({ initial, stock, onAdd }) => {
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+const CartWidget = ({ }) => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
 
-            <form className="d-flex">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item" id="chart" type="button" data-bs-scroll="true"
-                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                        aria-controls="offcanvasRight">
-                        <p id="items" className="bi bi-cart-fill carro"></p>
-                    </li>
-                </ul>
-                <div className="ocultar">
-                    <span className="contador" id="cantidadProductos">0</span>
-                </div>
-            </form>
+            <Button className="bi bi-cart-fill carro" variant="primary" onClick={handleShow}>
+                Launch
+            </Button>
+            <main className="base-content">
+                <Offcanvas show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        Some text as placeholder. In real life you can have the elements you
+                        have chosen. Like, text, images, lists, etc.
+                    </Offcanvas.Body>
+                </Offcanvas>
+            </main>
         </>
+
     );
 }
+
 
 export default CartWidget;

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // Components
 import ItemList from "./ItemList";
 import Loader from "../Loader/Loader";
-
+import { ThemeContext } from '../ThemeContext'; //
 
 const ItemListContainer = ({ defaultCategory }) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -14,13 +14,13 @@ const ItemListContainer = ({ defaultCategory }) => {
 
     useEffect(() => {
         const category = defaultCategory;
-        console.log(category)
+    
         fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${category}&limit=9&offset=0`)
             .then((response) => {
                 if (response.ok) return response.json();
             })
             .then((result) => {
-                console.log(result.results)
+        
                 setItems(result.results);
             })
             .catch((error) => console.error(error))
@@ -30,7 +30,7 @@ const ItemListContainer = ({ defaultCategory }) => {
     if (isLoading) return <Loader />;
 
     return (
-        <main
+        <main className="base-content"
             style={{
                 padding: "1rem",
                 display: "flex",
