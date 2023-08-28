@@ -110,26 +110,26 @@ const NavBar = () => {
                                 </li>
 
                             </ul>
+                            <form class="d-flex" role="search">
+                                <Typography>light</Typography>
+                                <FormGroup>
+                                    <FormControlLabel
+                                        control={
+                                            <MaterialUISwitch
+                                                checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
+                                                onChange={toggleTheme}
+                                            />
+                                        }
+                                    />
+                                </FormGroup>
+                                <Typography>Dark</Typography>
 
+                            </form>
+                            <form class="d-flex" role="search">
+                                <SearchBar />
+                            </form>
                         </div>
-                        <form class="d-flex" role="search">
-                            <Typography>light</Typography>
-                            <FormGroup>
-                                <FormControlLabel
-                                    control={
-                                        <MaterialUISwitch
-                                            checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
-                                            onChange={toggleTheme}
-                                        />
-                                    }
-                                />
-                            </FormGroup>
-                            <Typography>Dark</Typography>
 
-                        </form>
-                        <form class="d-flex" role="search">
-                            <SearchBar />
-                        </form>
                     </div>
 
                 </nav >
