@@ -90,40 +90,47 @@ body header {
 [data-theme=dark] .navbar .navbar-toggler {
   background-color: #FFF !important;
 }
+[data-theme=dark] .loader-text {
+  color: #334155 !important;
+}
+[data-theme=dark] body main .row {
+  margin-top: 10vh;
+}
 [data-theme=dark] body main li:hover {
+  background-color: #334155 !important;
   border-radius: 30px;
 }
 [data-theme=dark] body main li:hover a:hover {
-  background-color: aliceblue !important;
-  color: #334155 !important;
+  background-color: #334155;
+  color: aliceblue;
   transition: 100ms;
-  border-radius: 30px;
+  border-radius: 10px;
 }
-[data-theme=dark] .embed-iframe-items::-webkit-scrollbar-thumb {
+[data-theme=dark] body .embed-iframe-items::-webkit-scrollbar-thumb {
   background-color: #FFF;
   border-radius: 10px;
 }
-[data-theme=dark] a {
+[data-theme=dark] body a {
   color: #FFF !important;
   text-decoration: none;
 }
-[data-theme=dark] .card {
+[data-theme=dark] body .card {
   box-shadow: 0px 0px 5px 1px #e2e8f0;
 }
-[data-theme=dark] .card p,
-[data-theme=dark] .card h5 {
+[data-theme=dark] body .card p,
+[data-theme=dark] body .card h5 {
   color: #334155;
 }
-[data-theme=dark] .card:hover {
+[data-theme=dark] body .card:hover {
   box-shadow: 0px 0px 5px 1px #e2e8f0;
 }
-[data-theme=dark] .base-experience p {
+[data-theme=dark] body .base-experience p {
   color: #334155;
 }
-[data-theme=dark] .btn-close {
+[data-theme=dark] body .btn-close {
   background-color: #FFF;
 }
-[data-theme=dark] .logo_Infinity {
+[data-theme=dark] body .logo_Infinity {
   height: 80px;
   width: 80px;
   background-size: cover;
@@ -131,16 +138,16 @@ body header {
   background-image: url("/src/assets/img/2.png");
   background-position: center;
 }
-[data-theme=dark] .logo_Infinity a {
+[data-theme=dark] body .logo_Infinity a {
   text-decoration: none !important;
 }
-[data-theme=dark] .offcanvas-header {
+[data-theme=dark] body .offcanvas-header {
   background-color: #334155;
   color: #FFF;
   border-width: 0px 0px 1px;
   border-style: solid solid solid;
 }
-[data-theme=dark] .offcanvas-body {
+[data-theme=dark] body .offcanvas-body {
   border-color: #FFF;
   background-color: #334155;
   color: #FFF;
@@ -720,24 +727,56 @@ p-last-child {
   font-size: 12px;
 }
 
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.loader-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-icon {
+  opacity: 0.7;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-text {
+  font-size: 16px;
+}
+
+#buscador {
+  margin-left: 50px;
+  width: 295px;
+  height: 35px;
+  position: relative;
+}
+
+#carrito {
+  margin-top: 10vh;
+}
+
 .me-auto {
-  gap: 20px;
+  gap: 10px;
 }
 
 .nav-link {
   text-decoration: none;
-}
-
-.contador {
-  display: block;
-  background-color: red;
-  color: black;
-  border-radius: 150px;
-  padding: 5px;
-  width: 30px;
-  text-align: center;
-  font-size: 14px;
-  margin: -10px 0 0 30px;
 }
 
 .addChart {
@@ -754,47 +793,54 @@ span {
 body main .row {
   margin-top: 10vh;
 }
-body main li:hover {
-  background-color: #334155 !important;
-  border-radius: 30px;
+body li {
+  text-decoration: none;
 }
-body main li:hover a:hover {
+body li a {
+  text-decoration: none;
+  color: black;
+}
+body li:hover {
+  background-color: #334155 !important;
+  border-radius: 10px;
+}
+body li:hover a:hover {
   background-color: #334155;
   color: aliceblue;
   transition: 100ms;
   border-radius: 10px;
   text-decoration: none;
 }
-body main .cardIndex {
+body .cardIndex {
   left: 10px;
   text-align: justify;
   height: 350px;
   width: 600px;
 }
-body main .cardIndex a {
+body .cardIndex a {
   text-decoration: none !important;
 }
-body main .cardIndex p {
+body .cardIndex p {
   display: none;
 }
-body main .cardIndex img {
+body .cardIndex img {
   height: 180px;
   width: 180px;
 }
-body main .cardIndex a {
+body .cardIndex a {
   color: #334155;
 }
-body main .cardIndex button {
+body .cardIndex button {
   display: none;
 }
-body main .cardIndex:hover {
+body .cardIndex:hover {
   box-shadow: 0px 0px 5px 1px grey;
   transition-property: height;
   transition-duration: 1500ms;
   height: 450px;
 }
-body main .cardIndex:hover button,
-body main .cardIndex:hover p {
+body .cardIndex:hover button,
+body .cardIndex:hover p {
   display: block;
 }
 

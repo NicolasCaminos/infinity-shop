@@ -1,20 +1,17 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import LogoInfinity from '../../assets/img/4.png'
-import CartWidget from '../Cart/CartWidget';
-import Row from 'react-bootstrap/Row';
-import Item from '../ItemList/Item';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../ThemeContext'; // Importación correcta
-import React, { useContext } from 'react'; // Asegúrate de importar useContext
+// Dependencies
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+// Components
+import SearchBar from "../SearchBar/SearchBar";
+// Context
+import { BasicContext } from "../Context/BasicContext";
+import Typography from "@mui/material/Typography";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import { ThemeContext } from "../Context/ThemeContext";
+import { styled } from "@mui/material/styles";
 
-import { styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Typography from '@mui/material/Typography';
-//funcion del switch
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -62,49 +59,80 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-
-function NavBar() {
+const NavBar = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
-
-
+    const basicContext = useContext(BasicContext);
     return (
         <>
+
             <header className="base-header">
-                <Navbar className="navbar navbar-expand-lg navbar-light">
-                    <Container>
-                        <Link className="linknav" to="/" >
-                            <Navbar.Brand><img className="logo_Infinity" ></img></Navbar.Brand>
-                        </Link>
 
-                        <Nav className="me-auto">
+                <nav className="navbar navbar-expand-lg navbar-light">
 
-                            <Link className="nav-link" to="/category/MLA1652">Notebook</Link>
-                            <Link className="nav-link" to="/category/MLA1735">Seguridad y Antivirus </Link>
-                            <Link className="nav-link" to="/category/MLA1672">Discos</Link>
-                        </Nav>
+                    <div className="container-fluid">
+                        <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity" onClick={basicContext.clearSearch}  >
+                            <div className="d-block w-100">
+
+                            </div>
+                        </NavLink>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav fw-light text-center">
+                                <li className="nav-item mx-2">
+                                    <NavLink
+                                        to={"/category/electronics"}
+                                        onClick={basicContext.clearSearch}
+                                    >
+                                        Electronics
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <NavLink
+                                        to={"/category/fornitures"}
+
+                                        onClick={basicContext.clearSearch}
+                                    >
+                                        Fornitures
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <NavLink
+                                        to={"/category/vehicles"}
+                                        onClick={basicContext.clearSearch}
+                                    >
+                                        Vehicles
+                                    </NavLink>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
                         <Typography>light</Typography>
-                    </Container>
+                        <FormGroup>
+                            <FormControlLabel
+                                control={
+                                    <MaterialUISwitch
+                                        checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
+                                        onChange={toggleTheme}
+                                    />
+                                }
+                            />
+                        </FormGroup>
+                        <Typography>Dark</Typography>
+                        <SearchBar />
+                    </div>
 
-                    <FormGroup>
-                        <FormControlLabel
-                            control={
-                                <MaterialUISwitch
-                                    defaultChecked={theme === 'dark'}
-                                    onChange={toggleTheme}
-                                />
-                            }
-                        />
-                    </FormGroup>
-                    <Typography>Dark</Typography>
-
-
-                </Navbar >
+                </nav >
 
             </header >
 
         </>
-    )
-
-}
+    );
+};
 
 export default NavBar;

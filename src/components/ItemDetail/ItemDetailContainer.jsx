@@ -1,59 +1,36 @@
-
-import Loader from "../Loader/Loader";
-import ItemDetail from "./ItemDetail";
+// Dependencies
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ThemeContext } from '../ThemeContext'; // Ajusta la ruta según tu estructura
+import { getDoc, getFirestore, doc } from "firebase/firestore";
+// Components
+import ItemDetail from "./ItemDetail";
 
+const ItemDetailContainer = ({ loader }) => {
+    const { itemId } = useParams();
+    const [item, setItem] = useState([]);
 
+    // Item de Mercado Libre
+    const getItemML = async () => {
+        const response = await fetch(`https://api.mercadolibre.com/items/${itemId}`);
+        const result = await response.json();
+        setItem(result);
+        loader(false);
+    };
 
-const ItemDetailContainer = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [items, setItems] = useState({});
-    const [detail, setDetail] = useState({});
-    const detailId = useParams();
-    const parames = useParams();
+    // Item de Firestore
+    const getItemFS = async () => {
+        const query = await doc(getFirestore(), "items", itemId);
+        const result = await getDoc(query);
+        setItem({ id: result.id, ...result.data() });
+        loader(false);
+    };
 
+    // Llama a la función cuando se recibe la variable itemId
     useEffect(() => {
-        console.log(parames)
-
-        fetch(`https://api.mercadolibre.com/items/${parames.id}`)
-            .then((response) => {
-                if (response.ok) return response.json();
-
-            })
-            .then((result) => {
-                console.log(result);
-
-                setItems({
-                    id: result.id,
-                    title: result.title,
-                    price: result.price,
-                    thumbnail_id: result.thumbnail_id,
-                });// Check the response content here
-            })
-            .catch((error) => console.error(error))
-            .finally(() => setIsLoading(false));
-    }, []);
-
-    useEffect(() => {
-
-        fetch(`https://api.mercadolibre.com/items/${detailId.id}/description`)
-            .then((response) => {
-                if (response.ok) return response.json();
-            })
-            .then((result) => {
-
-                setDetail({
-                    plain_text: result.plain_text
-
-                });
-            })
-            .catch((error) => console.error(error))
-            .finally(() => setIsLoading(false));
-    }, []);
-
-    if (isLoading) return <Loader />;
+        loader(true);
+        //getItemML();
+        getItemFS();
+    }, [itemId]);
 
     return (
         <main className="base-content"
@@ -66,13 +43,7 @@ const ItemDetailContainer = () => {
                 gap: "2rem",
             }}
         >
-            <ItemDetail
-                id={items.id}
-                nombre={items.title}
-                precio={items.price}
-                foto={items.thumbnail_id}
-                plain_text={detail.plain_text}
-            />
+            <ItemDetail key={item.id} item={item} />
         </main>
     );
 }

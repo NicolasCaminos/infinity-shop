@@ -1,34 +1,20 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+// Dependencies
+import { useContext } from "react";
+// Contexts
+import { CartContext } from "../Context/CartContext";
 
-const CartWidget = ({ }) => {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+export const CartWidget = () => {
+    const cartContext = useContext(CartContext);
 
     return (
-        <>
-
-            <Button className="bi bi-cart-fill carro" variant="primary" onClick={handleShow}>
-                Launch
-            </Button>
-            <main className="base-content">
-                <Offcanvas show={show} onHide={handleClose}>
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        Some text as placeholder. In real life you can have the elements you
-                        have chosen. Like, text, images, lists, etc.
-                    </Offcanvas.Body>
-                </Offcanvas>
-            </main>
-        </>
-
+        <span
+            id="contador"
+            className={`position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger ${cartContext.counter < 1 && "d-none"
+                }`}
+        >
+            {cartContext.counter}
+        </span>
     );
-}
-
+};
 
 export default CartWidget;
