@@ -125,9 +125,9 @@ const NavBar = () => {
                                 <Typography>Dark</Typography>
 
                             </form>
-                            <form class="d-flex" role="search">
-                                <SearchBar />
-                            </form>
+
+                            <SearchBar />
+
                         </div>
 
                     </div>

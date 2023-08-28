@@ -24,7 +24,7 @@ const SearchBar = () => {
     return (
         <form id="buscador" className="input-group" role="search" onSubmit={searchQuery}>
             <input
-                className="form-control"
+                class="form-control me-2"
                 type="search"
                 autoComplete="off"
                 placeholder="Search..."
