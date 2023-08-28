@@ -1,44 +1,39 @@
-
-import Loader from "../Loader/Loader";
-import ItemDetail from "./ItemDetail";
+// Dependencies
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDoc, getFirestore, doc } from "firebase/firestore";
+// Components
+import ItemDetail from "./ItemDetail";
 
+const ItemDetailContainer = ({ loader }) => {
+    const { itemId } = useParams();
+    const [item, setItem] = useState([]);
 
+    // Item de Mercado Libre
+    const getItemML = async () => {
+        const response = await fetch(`https://api.mercadolibre.com/items/${itemId}`);
+        const result = await response.json();
+        setItem(result);
+        loader(false);
+    };
 
-function ItemDetailContainer() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [items, setItems] = useState({});
-    const parames = useParams();
+    // Item de Firestore
+    const getItemFS = async () => {
+        const query = await doc(getFirestore(), "items", itemId);
+        const result = await getDoc(query);
+        setItem({ id: result.id, ...result.data() });
+        loader(false);
+    };
 
+    // Llama a la función cuando se recibe la variable itemId
     useEffect(() => {
-        console.log(parames)
-
-        fetch(`https://api.mercadolibre.com/items/${parames.id}`)
-            .then((response) => {
-                if (response.ok) return response.json();
-
-            })
-            .then((result) => {
-                console.log(result);
-
-                setItems({
-                    id: result.id,
-                    title: result.title,
-
-                    price: result.price,
-                    thumbnail_id: result.thumbnail,
-                    descripcion: result.descripcion
-                });// Check the response content here
-            })
-            .catch((error) => console.error(error))
-            .finally(() => setIsLoading(false));
-    }, []);
-
-    if (isLoading) return <Loader />;
+        loader(true);
+        //getItemML();
+        getItemFS();
+    }, [itemId]);
 
     return (
-        <main
+        <main className="base-content"
             style={{
                 padding: "1rem",
                 display: "flex",
@@ -48,15 +43,11 @@ function ItemDetailContainer() {
                 gap: "2rem",
             }}
         >
-            <ItemDetail
-                key={items.id}
-                nombre={items.title}
-                precio={items.price}
-                foto={items.thumbnail_id}
-            />
+            <ItemDetail key={item.id} item={item} />
         </main>
     );
 }
 
 export default ItemDetailContainer;
+
 

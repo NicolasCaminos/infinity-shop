@@ -116,7 +116,7 @@ $ npm run dev
 
 ## FAQs
 
-<!-- Puede visitar la web en: <a href="https://nicolascaminos.github.io/Oasis/" target="_blank" rel="noreferrer"> <img src="https://oasisinet.com/wp-content/uploads/2022/05/cropped-oasis-fav-32x32.png" alt="oasis" width="40" height="40"/> </a><a href="https://nicolascaminos.github.io/Oasis/" target="_blank" rel="noreferrer">https://nicolascaminos.github.io/Oasis/</a> -->
+Puede visitar la web en: <a href="https://infinityshops.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://oasisinet.com/wp-content/uploads/2022/05/cropped-oasis-fav-32x32.png" alt="oasis" width="40" height="40"/> </a><a href="https://nicolascaminos.github.io/Oasis/" target="_blank" rel="noreferrer">https://nicolascaminos.github.io/Oasis/</a> 
 
 <br>
 

@@ -1,4 +1,5 @@
 .logo_Infinity {
+    background-image: url("/src/assets/img/4.png");
     height: 80px !important;
     width: 80px !important;
     position: relative;
@@ -18,12 +19,9 @@
     display: none;
 }
 
-
-
 .contador {
     display: block;
     background-color: red;
-    color: black;
     border-radius: 150px;
     padding: 5px;
     width: 30px;
@@ -32,21 +30,67 @@
     margin: -10px 0 0 30px;
 }
 
-.card {
-    position: relative;
-    display: inline-block;
-    gap: 50px;
-    width: 50vh;
+.mostrar {
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.loader-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
 
 }
 
-:is(.removeProduct.addProduct) {
-    height: 20px;
-    display: inline;
-    position: relative;
-    width: 20px;
-    gap: 5px;
+.loader-icon {
+    opacity: 0.7;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
 }
+
+.loader-text {
+    font-size: 16px;
+}
+
+#buscador {
+    margin-left: 50px;
+    width: 295px;
+    height: 35px;
+
+    position: relative;
+}
+
+#carrito {
+    margin-top: 10vh;
+}
+
+.me-auto {
+    gap: 10px;
+
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
 
 .addChart {
     position: relative;
@@ -56,4 +100,132 @@
 span {
     position: relative;
     width: 30px;
+}
+
+/*INDEX*/
+body {
+
+
+
+    & main {
+        & .row {
+            margin-top: 10vh;
+        }
+
+    }
+
+
+    li {
+        text-decoration: none;
+
+        a {
+            text-decoration: none;
+            color: black;
+ 
+        }
+    }
+
+
+    li:hover {
+        background-color: #334155 !important;
+        border-radius: 10px;
+
+
+        a:hover {
+            background-color: #334155;
+            color: aliceblue;
+            transition: 100ms;
+            border-radius: 10px;
+
+            text-decoration: none;
+        }
+    }
+
+    .cardIndex {
+        left: 10px;
+        text-align: justify;
+        height: 350px;
+        width: 600px;
+
+        a {
+            text-decoration: none !important;
+        }
+
+        p {
+            display: none;
+
+        }
+
+        img {
+            height: 180px;
+            width: 180px;
+        }
+
+        a {
+            color: #334155;
+        }
+
+        button {
+            display: none;
+        }
+    }
+
+    .cardIndex:hover {
+        box-shadow: 0px 0px 5px 1px grey;
+        transition-property: height;
+        transition-duration: 1500ms;
+        height: 450px;
+
+        button,
+        p {
+            display: block;
+        }
+    }
+
+}
+
+
+
+@media only screen and (min-width: 360px) and (max-width: 770px) {
+    body {
+        & main {
+            & .row {
+                margin-top: 10vh;
+            }
+
+            .cardIndex {
+                text-align: justify;
+                height: 300px;
+
+                img {
+                    height: 180px;
+                    width: 180px;
+                }
+            }
+
+        }
+
+    }
+}
+
+/* */
+@media screen and (min-width: 768px) and (max-width: 975px) {
+    body {
+        & main {
+            & .row {
+                margin-top: 10vh;
+            }
+
+            .cardIndex {
+                text-align: justify;
+
+                img {
+                    height: 180px;
+                    width: 180px;
+                }
+            }
+        }
+
+    }
+
 }

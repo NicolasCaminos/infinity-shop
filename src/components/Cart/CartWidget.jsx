@@ -1,22 +1,20 @@
-const CartWidget = ({ initial, stock, onAdd }) => {
+// Dependencies
+import { useContext } from "react";
+// Contexts
+import { CartContext } from "../Context/CartContext";
+
+export const CartWidget = () => {
+    const cartContext = useContext(CartContext);
 
     return (
-        <>
-
-            <form className="d-flex">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item" id="chart" type="button" data-bs-scroll="true"
-                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                        aria-controls="offcanvasRight">
-                        <p id="items" className="bi bi-cart-fill carro"></p>
-                    </li>
-                </ul>
-                <div className="ocultar">
-                    <span className="contador" id="cantidadProductos">0</span>
-                </div>
-            </form>
-        </>
+        <span
+            id="contador"
+            className={`position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger ${cartContext.counter < 1 && "d-none"
+                }`}
+        >
+            {cartContext.counter}
+        </span>
     );
-}
+};
 
 export default CartWidget;

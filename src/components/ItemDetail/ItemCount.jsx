@@ -6,52 +6,29 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-
-    const [count, setCount] = useState(initial)
-
-    const remove = () => {
-        setCount(count - 1);
-    }
-    const addProduct = () => {
-        setCount(count + 1);
-    }
-
-    function onAdd() {
-        if (count === 1) {
-            Swal.fire(
-                'Good Job!!',
-                `Usted compro ${count} producto`,
-                'success'
-            )
-        } else {
-            Swal.fire(
-                'Good Job!!',
-                `Usted compro ${count} productos`,
-                'success'
-            )
+const ItemCount = ({ count, setCount, stock }) => {
+    const onAdd = () => {
+        if (count < stock) {
+            setCount(count + 1);
+        }
+    };
+    const onRemove = () => {
+        if (count > 1) {
+            setCount(count - 1);
         }
     };
 
     return (
-        <>
-            <div className='btnCard'>
-                <Button className='removeProduct' variant="outlined" color="error" disabled={count <= 1} onClick={remove} >
-                    <RemoveShoppingCartIcon />
-                </Button>
-                <span>{count}</span>
-                <Button className='AddProduct' variant="outlined" color="success" disabled={count >= stock} onClick={addProduct} aria-label="add to shopping cart">
-                    <AddShoppingCartIcon />
-                </Button>
-                <div>
-                    <Button className='addChart' variant="contained" onClick={onAdd}>
-                        Agregar al Carrito
-                    </Button>
-                </div>
-            </div>
-
-        </>
+        <div className="input-group mb-3" style={{ maxWidth: "190px" }}>
+            <button id="restar" className="btn btn-secondary" type="button" onClick={onRemove}>
+                <i className="bi bi-dash"></i>
+            </button>
+            <input type="text" className="form-control text-center" value={count} disabled />
+            <button className="btn btn-secondary" type="button" onClick={onAdd}>
+                <i className="bi bi-plus"></i>
+            </button>
+        </div>
     );
-}
+};
 
-export default ItemCount;
+export default ItemCount
