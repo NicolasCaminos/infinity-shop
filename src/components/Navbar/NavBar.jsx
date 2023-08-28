@@ -112,19 +112,24 @@ const NavBar = () => {
                             </ul>
 
                         </div>
-                        <Typography>light</Typography>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={
-                                    <MaterialUISwitch
-                                        checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
-                                        onChange={toggleTheme}
-                                    />
-                                }
-                            />
-                        </FormGroup>
-                        <Typography>Dark</Typography>
-                        <SearchBar />
+                        <form class="d-flex" role="search">
+                            <Typography>light</Typography>
+                            <FormGroup>
+                                <FormControlLabel
+                                    control={
+                                        <MaterialUISwitch
+                                            checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
+                                            onChange={toggleTheme}
+                                        />
+                                    }
+                                />
+                            </FormGroup>
+                            <Typography>Dark</Typography>
+
+                        </form>
+                        <form class="d-flex" role="search">
+                            <SearchBar />
+                        </form>
                     </div>
 
                 </nav >
