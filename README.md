@@ -32,13 +32,25 @@ Crear un componente contenedor ItemListContainer.js con una prop greeting, y mue
 <li>Brand (título/nombre de la tienda).</li>
 <li>Un listado de categorías clickeables.</li>
 <li>Incorpora alguna librería de estilos con bootstrap/materialize u otro de tu preferencia (opcional).</li>
+<br>
 
-<!-- ### Entrega 0.2
+### Entrega 0.2
+Configurar en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom.Deberás desarrollar la navegabilidad básica de la aplicación, demostrando que la app permite ver el catálogo, y navegar a un detalle.
 
-
-
-### Entrega 0.3
-
+Componentes:
+<li>Navbar con cart</li>
+<li>Catálogo</li>
+<li>Detalle de producto</li>
+<br>
+Rutas a configurar
+<li>N‘/’ navega a <ItemListContainer /> </li>
+<li>N‘/category/:id’  <ItemListContainer /> </li>
+<li>N‘/item/:id’ navega a <ItemDetailContainer /> </li>
+<br>
+Links a configurar
+<li>NClickear en el brand debe navegar a ‘/’</li>
+<li>NClickear un Item.js debe navegar a /item/:id</li>
+<li>Clickear en una categoría del navbar debe navegar a /category/:categoryId </li>
 
 <br>
 
@@ -46,6 +58,30 @@ Crear un componente contenedor ItemListContainer.js con una prop greeting, y mue
 
 Se hace la entrega de:
 <br>
+App de un e-commerce para poder vender productos.
+<br>
+Componentes:
+<li>Navbar</li>
+<li>Catálogo</li>
+<li>Detalle de producto</li>
+<li>CartContext</li>
+<li>CartWidget</li>
+
+<br>
+Módulos:
+<br>
+<li>NavBar</li>
+<li>CartWidget</li>
+<li>ItemListContainer</li>
+<li>ItemList</li>
+<li>ItemDetailContainer</li>
+<li>ItemDetail</li>
+<li>temQuantitySelector</li>
+<li>Description</li>
+<li>AddItemButton</li>
+<li>Checkout</li>
+<li>Brief (detalle de compra)</li>
+
 
 
 <br> -->
@@ -54,7 +90,7 @@ Se hace la entrega de:
 
 ### Screenshot
 
-<!-- <h4> Night Mode</h4>
+<h4> Night Mode</h4>
 
 ![Image text](https://nicolascaminos.github.io/Oasis/images/readme/imagen1.jpg)
 <br>
@@ -116,7 +152,7 @@ $ npm run dev
 
 ## FAQs
 
-Puede visitar la web en: <a href="https://infinityshops.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://oasisinet.com/wp-content/uploads/2022/05/cropped-oasis-fav-32x32.png" alt="oasis" width="40" height="40"/> </a><a href="https://nicolascaminos.github.io/Oasis/" target="_blank" rel="noreferrer">https://nicolascaminos.github.io/Oasis/</a> 
+Puede visitar la web en: <a href="https://infinityshops.netlify.app/" target="_blank" rel="noreferrer"> <img src="http://localhost:5173/src/assets/img/2.png" alt="Infinity" width="40" height="40"/> </a><a href="https://github.com/NicolasCaminos/infinity-shop" target="_blank" rel="noreferrer">https://github.com/NicolasCaminos/infinity-shop</a> 
 
 <br>
 

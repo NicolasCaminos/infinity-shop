@@ -7,6 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { ThemeContext } from "../Context/ThemeContext";
 import { styled } from "@mui/material/styles";
+import { BasicContext } from "../Context/BasicContext";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -57,6 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const NavBar = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
+    const basicContext = useContext(BasicContext);
 
     return (
         <header className="base-header">
@@ -71,24 +73,50 @@ const NavBar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            {/* Agrega tus enlaces NavLink aquí */}
+                        <ul className="navbar-nav fw-light text-center">
+                            <li className="nav-item mx-2">
+                                <NavLink
+                                    to={"/category/electronics"}
+                                    onClick={basicContext.clearSearch}
+                                >
+                                    Electronics
+                                </NavLink>
+                            </li>
+                            <li className="nav-item mx-2">
+                                <NavLink
+                                    to={"/category/fornitures"}
+
+                                    onClick={basicContext.clearSearch}
+                                >
+                                    Fornitures
+                                </NavLink>
+                            </li>
+                            <li className="nav-item mx-2">
+                                <NavLink
+                                    to={"/category/vehicles"}
+                                    onClick={basicContext.clearSearch}
+                                >
+                                    Vehicles
+                                </NavLink>
+
+                            </li>
+
                         </ul>
-                        <SearchBar />
-                        <div clasimport SearchBarSearchBarSearchBarName="form-check form-switch">
-                            <Typography>light</Typography>
-                            <FormGroup>
-                                <FormControlLabel
-                                    control={
-                                        <MaterialUISwitch
-                                            checked={theme === "dark"}
-                                            onChange={toggleTheme}
-                                        />
-                                    }
-                                />
-                            </FormGroup>
-                            <Typography>Dark</Typography>
-                        </div>
+                    </div>
+                    <SearchBar />
+                    <div clasimport SearchBarSearchBarSearchBarName="form-check form-switch">
+                        <Typography>light</Typography>
+                        <FormGroup>
+                            <FormControlLabel
+                                control={
+                                    <MaterialUISwitch
+                                        checked={theme === "dark"}
+                                        onChange={toggleTheme}
+                                    />
+                                }
+                            />
+                        </FormGroup>
+                        <Typography>Dark</Typography>
                     </div>
                 </div>
             </nav>
