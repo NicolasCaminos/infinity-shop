@@ -150,7 +150,7 @@ $ npm run dev
 
 ## FAQs
 
-Puede visitar la web en: <a href="https://infinityshops.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://infinityshops.netlify.app/assets/4-edce19d1.png" alt="Infinity" width="40" height="40"/> </a>
+Puede visitar la web en: <a href="https://infinityshops.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://infinityshops.netlify.app/assets/4-edce19d1.png" alt="Infinity" width="40" height="40"/> https://infinityshops.netlify.app/</a>
 <br>
 Link del repositorio: 
 <a href="https://github.com/NicolasCaminos/infinity-shop" target="_blank" rel="noreferrer">https://github.com/NicolasCaminos/infinity-shop</a> 
