@@ -64,15 +64,11 @@ const NavBar = () => {
     const basicContext = useContext(BasicContext);
     return (
         <>
-
             <header className="base-header">
-
                 <nav className="navbar navbar-expand-lg navbar-light">
-
                     <div className="container-fluid">
                         <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity" onClick={basicContext.clearSearch}  >
                             <div className="d-block w-100">
-
                             </div>
                         </NavLink>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -80,9 +76,10 @@ const NavBar = () => {
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav fw-light text-center">
-                                <li className="nav-item mx-2">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li className="nav-item">
                                     <NavLink
                                         to={"/category/electronics"}
                                         onClick={basicContext.clearSearch}
@@ -90,7 +87,7 @@ const NavBar = () => {
                                         Electronics
                                     </NavLink>
                                 </li>
-                                <li className="nav-item mx-2">
+                                <li className="nav-item">
                                     <NavLink
                                         to={"/category/fornitures"}
 
@@ -99,43 +96,37 @@ const NavBar = () => {
                                         Fornitures
                                     </NavLink>
                                 </li>
-                                <li className="nav-item mx-2">
+                                <li className="nav-item">
                                     <NavLink
                                         to={"/category/vehicles"}
                                         onClick={basicContext.clearSearch}
                                     >
                                         Vehicles
                                     </NavLink>
-
                                 </li>
-
                             </ul>
-                            <form class="d-flex" role="search">
-                                <Typography>light</Typography>
-                                <FormGroup>
-                                    <FormControlLabel
-                                        control={
-                                            <MaterialUISwitch
-                                                checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
-                                                onChange={toggleTheme}
-                                            />
-                                        }
-                                    />
-                                </FormGroup>
-                                <Typography>Dark</Typography>
+                            <SearchBar />
+                            <form className="d-flex" id="form_slider">
+                                <div className="form-check form-switch">
+                                    <Typography>light</Typography>
+                                    <FormGroup>
+                                        <FormControlLabel
+                                            control={
+                                                <MaterialUISwitch
+                                                    checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
+                                                    onChange={toggleTheme}
+                                                />
+                                            }
+                                        />
+                                    </FormGroup>
+                                    <Typography>Dark</Typography>
+                                </div>
 
                             </form>
-
-                            <SearchBar />
-
                         </div>
-
                     </div>
-
-                </nav >
-
-            </header >
-
+                </nav>
+            </header>
         </>
     );
 };
