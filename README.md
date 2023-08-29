@@ -54,7 +54,7 @@ Links a configurar
 
 <br>
 
-### Entrega 0.4 Final
+### Entrega 0.3 Final
 
 Se hace la entrega de:
 <br>
