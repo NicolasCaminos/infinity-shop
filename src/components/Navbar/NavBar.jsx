@@ -1,10 +1,6 @@
-// Dependencies
+import SearchBar from "../SearchBar/SearchBar"
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-// Components
-import SearchBar from "../SearchBar/SearchBar";
-// Context
-import { BasicContext } from "../Context/BasicContext";
 import Typography from "@mui/material/Typography";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -61,73 +57,42 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const NavBar = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
-    const basicContext = useContext(BasicContext);
+
     return (
-        <>
-            <header className="base-header">
-                <nav className="navbar navbar-expand-lg navbar-light">
-                    <div className="container-fluid">
-                        <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity" onClick={basicContext.clearSearch}  >
-                            <div className="d-block w-100">
-                            </div>
-                        </NavLink>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
-                                <li className="nav-item">
-                                    <NavLink
-                                        to={"/category/electronics"}
-                                        onClick={basicContext.clearSearch}
-                                    >
-                                        Electronics
-                                    </NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink
-                                        to={"/category/fornitures"}
-
-                                        onClick={basicContext.clearSearch}
-                                    >
-                                        Fornitures
-                                    </NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink
-                                        to={"/category/vehicles"}
-                                        onClick={basicContext.clearSearch}
-                                    >
-                                        Vehicles
-                                    </NavLink>
-                                </li>
-                            </ul>
-                            <SearchBar />
-                            <form className="d-flex" id="form_slider">
-                                <div className="form-check form-switch">
-                                    <Typography>light</Typography>
-                                    <FormGroup>
-                                        <FormControlLabel
-                                            control={
-                                                <MaterialUISwitch
-                                                    checked={theme === "dark"} // Usamos 'checked' en lugar de 'defaultChecked'
-                                                    onChange={toggleTheme}
-                                                />
-                                            }
+        <header className="base-header">
+            <nav className="navbar navbar-expand-lg navbar-light">
+                <div className="container-fluid">
+                    <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity">
+                        {/* Aquí puedes agregar el contenido de tu Navbar Brand */}
+                    </NavLink>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            {/* Agrega tus enlaces NavLink aquí */}
+                        </ul>
+                        <SearchBar />
+                        <div clasimport SearchBarSearchBarSearchBarName="form-check form-switch">
+                            <Typography>light</Typography>
+                            <FormGroup>
+                                <FormControlLabel
+                                    control={
+                                        <MaterialUISwitch
+                                            checked={theme === "dark"}
+                                            onChange={toggleTheme}
                                         />
-                                    </FormGroup>
-                                    <Typography>Dark</Typography>
-                                </div>
-
-                            </form>
+                                    }
+                                />
+                            </FormGroup>
+                            <Typography>Dark</Typography>
                         </div>
                     </div>
-                </nav>
-            </header>
-        </>
+                </div>
+            </nav>
+        </header>
     );
 };
 
