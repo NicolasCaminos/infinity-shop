@@ -43,13 +43,13 @@ Componentes:
 <li>Detalle de producto</li>
 <br>
 Rutas a configurar
-<li>N‘/’ navega a <ItemListContainer /> </li>
-<li>N‘/category/:id’  <ItemListContainer /> </li>
-<li>N‘/item/:id’ navega a <ItemDetailContainer /> </li>
+<li>‘/’ navega a <ItemListContainer /> </li>
+<li>‘/category/:id’  <ItemListContainer /> </li>
+<li>‘/item/:id’ navega a <ItemDetailContainer /> </li>
 <br>
 Links a configurar
-<li>NClickear en el brand debe navegar a ‘/’</li>
-<li>NClickear un Item.js debe navegar a /item/:id</li>
+<li>Clickear en el brand debe navegar a ‘/’</li>
+<li>Clickear un Item.js debe navegar a /item/:id</li>
 <li>Clickear en una categoría del navbar debe navegar a /category/:categoryId </li>
 
 <br>
@@ -84,7 +84,7 @@ Módulos:
 
 
 
-<br> -->
+<br> 
 
 ---
 
@@ -100,7 +100,7 @@ Módulos:
 <h4> Light Mode</h4>
 
 ![Image text](https://nicolascaminos.github.io/Oasis/images/readme/imagen2.jpg)
-<br> -->
+<br> 
 
 ---
 
