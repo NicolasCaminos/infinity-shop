@@ -92,10 +92,8 @@ Módulos:
 
 <h4> Demo</h4>
 
-<video autoplay>
- <source src="src/assets/video/Infinity.mp4" type="video/mp4">
+https://github.com/NicolasCaminos/infinity-shop/assets/45422512/acd48ce5-8b9c-453c-af95-5a74da34bbc9
 
-</video>
 
 
 </br>
