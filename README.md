@@ -92,7 +92,7 @@ Módulos:
 
 <figure class="video_container">
 <video controls="true" allowfullscreen="true" ">
-    <source src="src/assets/video/Infinity.mp4" type="video/mp4">
+    <source src="https://infinityshops.netlify.app/assets/video/Infinity.mp4" type="video/mp4">
 </figure
 
 
