@@ -90,9 +90,17 @@ Módulos:
 
 ### Screenshot
 
-<video width="320" height="320" controls >
-  <source src="src/assets/video/Infinity.mp4" type="video/mp4">
-</video>
+<h4> Night Mode</h4>
+
+![Image text](https://nicolascaminos.github.io/Oasis/images/readme/imagen1.jpg)
+</br>
+</br>
+</br>
+
+<h4> Light Mode</h4>
+
+![Image text](https://nicolascaminos.github.io/Oasis/images/readme/imagen2.jpg)
+</br>
 
 ---
 
