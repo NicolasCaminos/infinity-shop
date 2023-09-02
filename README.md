@@ -90,7 +90,7 @@ Módulos:
 
 ### Screenshot
 
-<video width="320" height="320" controls autoplay>
+<video width="320" height="320" controls >
   <source src="src/assets/video/Infinity.mp4" type="video/mp4">
 </video>
 
