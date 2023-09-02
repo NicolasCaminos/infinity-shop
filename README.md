@@ -91,7 +91,7 @@ Módulos:
 ### Screenshot
 
 
-![Video](https://infinityshops.netlify.app/assets/video/Infinity.mp4)
+![](https://infinityshops.netlify.app/assets/video/Infinity.mp4)
 
 
 ---
