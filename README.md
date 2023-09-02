@@ -91,7 +91,7 @@ Módulos:
 ### Screenshot
 
 
-![](file:src/assets/video/Infinity.mp4)
+![Video](file:src/assets/video/Infinity.mp4)
 
 
 ---
