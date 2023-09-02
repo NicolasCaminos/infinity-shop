@@ -1,10 +1,11 @@
 # Infinity-Shop
 
 1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+2. [Screenshot](#screenshot)
+3. [Technologies](#technologies)
+4. [Installation](#installation)
+5. [Collaboration](#collaboration)
+6. [FAQs](#faqs)
 
 ---
 
