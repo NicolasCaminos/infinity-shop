@@ -142,9 +142,7 @@ const Checkout = ({ loader }) => {
                                             type="text"
                                             className="form-control"
                                             id="firstName"
-                                            placeholder=""
-                                            required
-                                            defaultValue={"John"}
+                                            placeholder="Nicolas"
                                             onChange={handleChange}
                                         />
                                         <div className="invalid-feedback">Valid first name is required.</div>
@@ -156,9 +154,8 @@ const Checkout = ({ loader }) => {
                                             type="text"
                                             className="form-control"
                                             id="lastName"
-                                            placeholder=""
+                                            placeholder="Caminos"
                                             required
-                                            defaultValue={"Doe"}
                                             onChange={handleChange}
                                         />
                                         <div className="invalid-feedback">Valid last name is required.</div>
@@ -173,7 +170,6 @@ const Checkout = ({ loader }) => {
                                         className="form-control"
                                         id="email"
                                         placeholder="you@example.com"
-                                        defaultValue={"john@doe.com"}
                                         onChange={handleChange}
                                         required
                                     />
@@ -189,7 +185,6 @@ const Checkout = ({ loader }) => {
                                         id="address"
                                         placeholder="1234 Main St"
                                         required
-                                        defaultValue={"Back Street Boys"}
                                         onChange={handleChange}
                                     />
                                     <div className="invalid-feedback">Please enter your shipping address.</div>
@@ -203,7 +198,6 @@ const Checkout = ({ loader }) => {
                                             className="form-select d-block w-100"
                                             id="country"
                                             required
-                                            defaultValue={"Argentina"}
                                             onChange={handleChange}
                                         >
                                             <option>Choose...</option>
@@ -218,7 +212,6 @@ const Checkout = ({ loader }) => {
                                             className="form-select d-block w-100"
                                             id="state"
                                             required
-                                            defaultValue={"Buenos Aires"}
                                             onChange={handleChange}
                                         >
                                             <option>Choose...</option>
@@ -235,7 +228,6 @@ const Checkout = ({ loader }) => {
                                             id="zip"
                                             placeholder=""
                                             required
-                                            defaultValue={"2000"}
                                             onChange={handleChange}
                                         />
                                         <div className="invalid-feedback">Zip code required.</div>
@@ -283,7 +275,6 @@ const Checkout = ({ loader }) => {
                                             id="cc-name"
                                             placeholder=""
                                             required
-                                            defaultValue={"JOHN DOE"}
                                             onChange={handleChange}
                                         />
                                         <small className="text-muted">Full name as displayed on card</small>

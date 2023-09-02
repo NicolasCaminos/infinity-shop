@@ -9,12 +9,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 // Firebase
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-    apiKey: "AIzaSyCokBnFKS14xiAHccqDuBooKNjeIMj0CDg",
-    authDomain: "graymarket-477c8.firebaseapp.com",
-    projectId: "graymarket-477c8",
-    storageBucket: "graymarket-477c8.appspot.com",
-    messagingSenderId: "1019306318694",
-    appId: "1:1019306318694:web:cbe5df12b007ab5eb9c6a7",
+    apiKey: "AIzaSyA6gQn12NgrGlF3z3qmhyaQnZwfgVNUKrw",
+    authDomain: "infinity-e76f9.firebaseapp.com",
+    projectId: "infinity-e76f9",
+    storageBucket: "infinity-e76f9.appspot.com",
+    messagingSenderId: "280223058794",
+    appId: "1:280223058794:web:85011ab4981963ec443313",
+    measurementId: "G-Q71Z04C5RQ"
 };
 const app = initializeApp(firebaseConfig);
 
@@ -22,6 +23,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     <React.StrictMode>
         <App />
-
     </React.StrictMode >,
 )

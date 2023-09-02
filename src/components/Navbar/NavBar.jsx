@@ -8,6 +8,9 @@ import Switch from "@mui/material/Switch";
 import { ThemeContext } from "../Context/ThemeContext";
 import { styled } from "@mui/material/styles";
 import { BasicContext } from "../Context/BasicContext";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -61,66 +64,50 @@ const NavBar = () => {
     const basicContext = useContext(BasicContext);
 
     return (
-        <header className="base-header">
-            <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container-fluid">
-                    <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity">
-                        {/* Aquí puedes agregar el contenido de tu Navbar Brand */}
-                    </NavLink>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav fw-light text-center">
-                            <li className="nav-item mx-2">
-                                <NavLink
-                                    to={"/category/electronics"}
+        <>
+            <header className="base-header">
+
+                <Navbar expand="lg" className="bg-body-tertiary">
+                    <Container>
+                        <NavLink to={"/"} className="navbar-brand fs-2 fw-bold logo_Infinity">
+                            <Navbar.Brand></Navbar.Brand>
+                        </NavLink>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <NavLink to={"/category/electronics"}
                                     onClick={basicContext.clearSearch}
                                 >
                                     Electronics
                                 </NavLink>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <NavLink
-                                    to={"/category/fornitures"}
+                                <NavLink to={"/category/fornitures"}
 
                                     onClick={basicContext.clearSearch}
                                 >
                                     Fornitures
                                 </NavLink>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <NavLink
-                                    to={"/category/vehicles"}
+                                <NavLink to={"/category/vehicles"}
                                     onClick={basicContext.clearSearch}
                                 >
                                     Vehicles
                                 </NavLink>
-
-                            </li>
-
-                        </ul>
-                    </div>
-                    <SearchBar />
-                    <div clasimport SearchBarSearchBarSearchBarName="form-check form-switch">
-                        <Typography>light</Typography>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={
-                                    <MaterialUISwitch
-                                        checked={theme === "dark"}
-                                        onChange={toggleTheme}
-                                    />
-                                }
-                            />
-                        </FormGroup>
-                        <Typography>Dark</Typography>
-                    </div>
-                </div>
-            </nav>
-        </header>
+                            </Nav>
+                            <SearchBar />
+                            <FormGroup id="slider">
+                                <FormControlLabel
+                                    control={
+                                        <MaterialUISwitch
+                                            checked={theme === "dark"}
+                                            onChange={toggleTheme}
+                                        />
+                                    }
+                                />
+                            </FormGroup>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </header>
+        </>
     );
 };
 

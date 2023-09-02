@@ -10,6 +10,7 @@ const ItemDetail = ({ item }) => {
     const [quantity, setQuantity] = useState(1);
     const cartContext = useContext(CartContext);
 
+
     return (
         <>
             <div className="card">
@@ -30,7 +31,7 @@ const ItemDetail = ({ item }) => {
                             </Link>
                         </small>
                         <h1>{item.title}</h1>
-                        <p className="text-secondary pb-3">{item.description}</p>
+                        <p id="conreemplazo" className="text-secondary pb-3">{item.description}</p>
                         <h2 className="pb-2">${item.price}</h2>
                         <div className="text-secondary">
                             <small>Quantity:</small>

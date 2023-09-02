@@ -13,7 +13,9 @@ const CartProvider = ({ children }) => {
     const [total, setTotal] = useState(totalStorage ? totalStorage : 0);
 
     const isInCart = (item) => {
+        console.log(item)
         return cart.find((product) => product.id === item.id);
+
     };
 
     const addItem = (item, quantity) => {

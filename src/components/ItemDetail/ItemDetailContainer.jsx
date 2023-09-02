@@ -20,6 +20,7 @@ const ItemDetailContainer = ({ loader }) => {
     // Item de Firestore
     const getItemFS = async () => {
         const query = await doc(getFirestore(), "items", itemId);
+
         const result = await getDoc(query);
         setItem({ id: result.id, ...result.data() });
         loader(false);

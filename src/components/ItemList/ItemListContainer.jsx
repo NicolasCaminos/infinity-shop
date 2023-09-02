@@ -41,8 +41,8 @@ const ItemListContainer = ({ loader }) => {
     const searchItemsFS = async () => {
         const querySnapshot = await collection(getFirestore(), "items");
         const result = await getDocs(query(querySnapshot));
-        const items = result.docs.map((item) => {
-            return { id: item.id, ...item.data() };
+        const items = result.docs.map((items) => {
+            return { id: items.id, ...items.data() };
         });
         const searchResults = [];
         items.forEach((item) => {

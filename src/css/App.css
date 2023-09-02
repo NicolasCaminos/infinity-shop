@@ -308,13 +308,14 @@ p-last-child {
 .base-content {
   flex: 1;
   position: relative;
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 .base-footer {
   display: flex;
   position: relative;
   align-items: center;
   padding: 32px 16px;
+  margin-top: 10vh;
   font-size: 16px;
   font-weight: 400;
   bottom: 0;
@@ -793,10 +794,7 @@ span {
 body main .row {
   margin-top: 10vh;
 }
-body li {
-  text-decoration: none;
-}
-body li a {
+body a {
   text-decoration: none;
   color: black;
 }
@@ -842,6 +840,9 @@ body .cardIndex:hover {
 body .cardIndex:hover button,
 body .cardIndex:hover p {
   display: block;
+}
+body #slider {
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 770px) {

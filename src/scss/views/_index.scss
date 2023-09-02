@@ -115,15 +115,12 @@ body {
     }
 
 
-    li {
+    a {
         text-decoration: none;
+        color: black;
 
-        a {
-            text-decoration: none;
-            color: black;
- 
-        }
     }
+
 
 
     li:hover {
@@ -182,6 +179,9 @@ body {
         }
     }
 
+    #slider {
+        margin-left: 10px;
+    }
 }
 
 
