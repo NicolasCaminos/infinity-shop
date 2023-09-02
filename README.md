@@ -91,8 +91,7 @@ Módulos:
 ### Screenshot
 
 <h4> Night Mode</h4>
-
-![Video](https://nicolascaminos.github.io/infinity-shop/src/assets/video/Infinity.mp4)
+[![](https://nicolascaminos.github.io/infinity-shop/src/assets/video/Infinity.mp4)](https://youtu.be/dQw4w9WgXcQ)
 </br>
 </br>
 </br>
