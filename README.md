@@ -91,7 +91,8 @@ Módulos:
 ### Screenshot
 
 <figure class="video_container">
-  <iframe src="src/assets/video/Infinity.mp4" frameborder="0" allowfullscreen="true"> </iframe>
+<video controls="true" allowfullscreen="true" ">
+    <source src="src/assets/video/Infinity.mp4" type="video/mp4">
 </figure
 
 
