@@ -17,7 +17,8 @@ const ItemDetail = ({ item }) => {
                 <div className="row g-0 py-4">
                     <div className="col-md-5 px-3">
                         <div className="d-flex flex-column justify-content-center">
-                            <img src={`../../../public/img/${item.image}`} className="card-img-top" alt="Product" />
+                            <img src={`../assets/img/${item.image}`} className="card-img-top" alt="Product" />
+                      
                         </div>
                     </div>
                     <div className="col-md-7">
