@@ -9,7 +9,7 @@ const Item = ({ item }) => {
                 <div className='cardIndex card'>
                     <Link to={`/item/${item.id}`} >
                         <img loading="lazy"
-                            src={`../../../public/img/${item.image}`}
+                            src={`../img/${item.image}`}
                             className="card-img-top"
                             alt="Smartphone"
                         />
